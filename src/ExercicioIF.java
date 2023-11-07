@@ -3,7 +3,7 @@ import java.util.Scanner;
 import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.JOptionPane;
 
-public class Aula5 {
+public class ExercicioIF {
     public static void main(String[] args) {
         int resposta = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero do exercicio"));
 
