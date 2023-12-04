@@ -10,6 +10,8 @@ public class exercicioVetor {
             exercicio2(args);
         } else if (resposta == 3) {
             exercicio3(args);
+        } else if (resposta == 4) {
+            exercicio4(args);
         } else {
             System.out.println("Não existe esse exercicio");
         }
@@ -58,18 +60,27 @@ public class exercicioVetor {
         for (int i = 0; i < vetor.length; i++) {
             vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
 
+        }
+        for (int i = 0; i < vetor.length; i++) {
             if (vetor[i] % 2 == 0) {
                 pares++;
                 System.out.println("Números pares são: " + vetor[i]);
             }
+
+        }
+        for (int i = 0; i < vetor.length; i++) {
             if (vetor[i] % 3 == 0 && vetor[i] % 5 == 0) {
                 div++;
                 System.out.println("Os números divisíveis por 5 e 3 são: " + vetor[i]);
             }
+        }
+        for (int i = 0; i < vetor.length; i++) {
             if (vetor[i] < 10) {
                 menoresDez++;
                 System.out.println("Números menores que dez: " + vetor[i]);
             }
+        }
+        for (int i = 0; i < vetor.length; i++) {
             if (vetor[i] > 100) {
                 maioresDez++;
                 System.out.println("Números maiores que 100: " + vetor[i]);
@@ -78,6 +89,8 @@ public class exercicioVetor {
                 System.out.println("Números negativos: " + vetor[i]);
 
             }
+        }
+        for (int i = 0; i < vetor.length; i++) {
             if (vetor[i] > 10 && vetor[i] < 100) {
                 maiores++;
                 System.out.println("Números entre 10 e 100: " + vetor[i]);
@@ -89,5 +102,18 @@ public class exercicioVetor {
         System.out.println("Total de números maiores que 100: " + maioresDez);
         System.out.println("Total de números negativos: " + negativo);
         System.out.println("Total de números entre 10 e 100: " + maiores);
+    }
+
+    public static void exercicio4(String[] args) {
+        int tamanho = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor"));
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
+
+        }
+        for (int i = vetor.length - 1; i >= 0; i--) {
+            System.out.println("Vetor invertido: " + vetor[i]);
+
+        }
     }
 }
