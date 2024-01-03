@@ -12,6 +12,10 @@ public class exercicioVetor {
             exercicio3(args);
         } else if (resposta == 4) {
             exercicio4(args);
+        } else if (resposta == 5) {
+            exercicio5(args);
+        } else if (resposta == 6) {
+            exercicio6(args);
         } else {
             System.out.println("Não existe esse exercicio");
         }
@@ -107,6 +111,7 @@ public class exercicioVetor {
     public static void exercicio4(String[] args) {
         int tamanho = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor"));
         int[] vetor = new int[tamanho];
+
         for (int i = 0; i < vetor.length; i++) {
             vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
 
@@ -115,5 +120,52 @@ public class exercicioVetor {
             System.out.println("Vetor invertido: " + vetor[i]);
 
         }
+    }
+
+    public static void exercicio5(String[] args) {
+        int tamanho = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho dos vetores"));
+        int[] vetor1 = new int[tamanho];
+        int[] vetor2 = new int[tamanho];
+        int mult = 0;
+
+        for (int i = 0; i < vetor1.length; i++) {
+            vetor1[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
+
+        }
+        for (int i = 0; i < vetor2.length; i++) {
+            vetor2[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
+
+        }
+        for (int i = 0; i < vetor1.length; i++) {
+            mult = vetor1[i] * vetor2[i];
+
+            System.out.println(vetor1[i] + "x" + vetor2[i] + "=" + mult);
+        }
+    }
+
+    public static void exercicio6(String[] args) {
+        int[] vetor = new int[20];
+        int maior = 0;
+        int menor = 0;
+        int igual = 0;
+
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
+        }
+
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i] > vetor[0]) {
+                maior++;
+            } else if (vetor[i] < vetor[0]) {
+                menor++;
+            } else {
+                igual++;
+            }
+
+        }
+        System.out.println("Numeros maiores que o primeiro elemento: " + maior);
+        System.out.println("Numeros menor que o primeiro elemento: " + menor);
+        System.out.println("Numeros igual que o primeiro elemento: " + igual);
+
     }
 }
