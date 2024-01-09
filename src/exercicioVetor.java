@@ -16,6 +16,10 @@ public class exercicioVetor {
             exercicio5(args);
         } else if (resposta == 6) {
             exercicio6(args);
+        } else if (resposta == 7) {
+            exercicio7(args);
+        } else if (resposta == 8) {
+            exercicio8(args);
         } else {
             System.out.println("Não existe esse exercicio");
         }
@@ -167,5 +171,57 @@ public class exercicioVetor {
         System.out.println("Numeros menor que o primeiro elemento: " + menor);
         System.out.println("Numeros igual que o primeiro elemento: " + igual);
 
+    }
+
+    public static void exercicio7(String[] args) {
+        int r = 5;
+        int s = 10;
+        int[] vetor = new int[r];
+        int j = 0;
+        int[] vetor2 = new int[s];
+        int[] juncao = new int[15];
+
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do primeiro vetor: "));
+        }
+        for (int i = 0; i < vetor2.length; i++) {
+            vetor2[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do segundo vetor"));
+        }
+
+        for (int i = 0; i < juncao.length; i++) {
+            if (i < r) {
+                juncao[i] = vetor[i];
+            } else {
+                juncao[i] = vetor2[j];
+                j++;
+            }
+
+        }
+        for (int i = 0; i < juncao.length; i++) {
+            System.out.println(juncao[i]);
+        }
+    }
+
+    public static void exercicio8(String[] args) {
+        int[] vetor = new int[10];
+
+        int j = 9;
+
+        int k = 0;
+
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do primeiro vetor: "));
+        }
+
+        for (int i = 0; i < 5; i++) {
+            k = vetor[i];
+            vetor[i] = vetor[j];
+            vetor[j] = k;
+            j--;
+        }
+
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.println(vetor[i]);
+        }
     }
 }
