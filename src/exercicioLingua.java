@@ -10,6 +10,9 @@ public class exercicioLingua {
         System.out.println("Screen height = " + d.height);
 
     }
+    public static void exercicio(String[] args) {
+        
+    }
 
     public static void main(String[] args) {
         Locale language = Locale.getDefault();

@@ -1,9 +1,12 @@
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 public class PesquisaBinaria {
     public static void main(String[] args) {
         System.out.println("Aqui");
         pesquisaBinaria(args);
+        ordenacao(args);
     }
 
     public static void pesquisaBinaria(String[] args) {
@@ -31,5 +34,37 @@ public class PesquisaBinaria {
             }
         }
 
+    }
+
+    public static int buscarMenor(int[] array, int inicio) {
+        int menor = array[inicio];
+        int menorIndice = inicio;
+
+        for (int i = inicio; i < array.length; i++) {
+            if (array[i] < menor) {
+                menor = array[i];
+                menorIndice = i;
+            }
+        }
+        return menorIndice;
+
+    }
+
+    public static void ordenacao(String[] args) {
+        int tamanho = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor"));
+        int[] novoArray = new int[tamanho];
+
+        for (int i = 0; i < novoArray.length; i++) {
+            novoArray[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite os numeros do vetor"));
+        }
+
+        for (int i = 0; i < novoArray.length - 1; i++) {
+            int menorIndice = buscarMenor(novoArray, i);
+            int temp = novoArray[menorIndice];
+            novoArray[menorIndice] = novoArray[i];
+            novoArray[i] = temp;
+        }
+
+        System.out.println(Arrays.toString(novoArray));
     }
 }
